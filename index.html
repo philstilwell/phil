@@ -6,20 +6,22 @@
     <title>Phil Stilwell</title>
     <meta
       name="description"
-      content="The personal GitHub Pages home of Phil Stilwell: writing, philosophy, projects, teaching, and personal archives."
+      content="The personal GitHub Pages home of Phil Stilwell: philosophy, writing, projects, teaching, and public archives."
     >
     <meta property="og:title" content="Phil Stilwell">
     <meta
       property="og:description"
-      content="A living index of writing, philosophy, projects, teaching, and personal archives."
+      content="A sleek personal site for philosophy, writing, projects, teaching, and public archives."
     >
     <meta property="og:type" content="website">
-    <meta name="theme-color" content="#f3f6f3">
+    <meta property="og:image" content="assets/images/phil-stilwell-portrait.png">
+    <meta name="theme-color" content="#11100d">
     <link rel="icon" href="data:,">
     <link rel="stylesheet" href="assets/css/styles.css">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+    <div class="scroll-progress" data-scroll-progress></div>
 
     <header class="site-header" data-header>
       <nav class="nav" aria-label="Primary navigation">
@@ -27,17 +29,25 @@
           <span class="brand-mark" aria-hidden="true">PS</span>
           <span>Phil Stilwell</span>
         </a>
+
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>
           <span class="nav-toggle-bar"></span>
           <span class="nav-toggle-bar"></span>
           <span class="nav-toggle-bar"></span>
           <span class="sr-only">Menu</span>
         </button>
+
         <div class="nav-links" id="nav-links" data-nav-links>
-          <a href="#life">Life</a>
+          <a href="#inquiry">Inquiry</a>
           <a href="#writing">Writing</a>
           <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+          <a href="#connect">Connect</a>
+          <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme" data-theme-toggle title="Toggle theme">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v2.2M12 18.8V21M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M3 12h2.2M18.8 12H21M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path>
+              <circle cx="12" cy="12" r="4.2"></circle>
+            </svg>
+          </button>
         </div>
       </nav>
     </header>
@@ -45,152 +55,166 @@
     <main id="main">
       <section class="hero section" id="top" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="quiet-line">A personal home for the public parts of a life.</p>
           <h1 id="hero-title">Phil Stilwell</h1>
           <p class="hero-text">
-            This site is a living index for the things I think about, build,
-            write, teach, revise, and return to over time.
+            Philosophy, writing, teaching, and tools for a life of examined attention.
           </p>
           <div class="hero-actions" aria-label="Primary links">
-            <a class="button primary" href="#life">Start here</a>
-            <a class="button secondary" href="#writing">Read notes</a>
+            <a class="button primary" href="#inquiry">Enter the study</a>
+            <a class="button secondary" href="#writing">Read the notes</a>
           </div>
         </div>
 
-        <div class="life-map" aria-label="A map of site themes">
-          <div class="map-line line-one"></div>
-          <div class="map-line line-two"></div>
-          <div class="map-line line-three"></div>
-          <article class="map-node node-think">
-            <span>Think</span>
-            <strong>Philosophy</strong>
-          </article>
-          <article class="map-node node-write">
-            <span>Write</span>
-            <strong>Essays</strong>
-          </article>
-          <article class="map-node node-build">
-            <span>Build</span>
-            <strong>Projects</strong>
-          </article>
-          <article class="map-node node-teach">
-            <span>Teach</span>
-            <strong>Learning</strong>
-          </article>
-          <article class="map-node node-live">
-            <span>Live</span>
-            <strong>Archive</strong>
-          </article>
-        </div>
+        <figure class="portrait-panel">
+          <div class="portrait-frame">
+            <img
+              src="assets/images/phil-stilwell-portrait.png"
+              alt="Portrait of Phil Stilwell wearing glasses and a black cap in front of yellow blossoms"
+              width="400"
+              height="400"
+            >
+          </div>
+          <figcaption>
+            <span>Current orientation</span>
+            <strong>Think clearly. Write honestly. Build what helps.</strong>
+          </figcaption>
+        </figure>
       </section>
 
-      <section class="section split-section" id="life" aria-labelledby="life-title">
-        <div>
-          <p class="section-label">Life Index</p>
-          <h2 id="life-title">A few doors into the same house.</h2>
+      <section class="section proof-strip" aria-label="Site focus">
+        <p>Philosophy</p>
+        <p>Arguments</p>
+        <p>Pedagogy</p>
+        <p>Software</p>
+        <p>Archive</p>
+      </section>
+
+      <section class="section inquiry-section" id="inquiry" aria-labelledby="inquiry-title">
+        <div class="section-heading">
+          <span class="section-index">01</span>
+          <h2 id="inquiry-title">An intellectual life, arranged for return visits.</h2>
+          <p>
+            A public home for questions, working theses, durable resources, and the projects that
+            make private thinking easier to share.
+          </p>
         </div>
-        <div class="aspect-grid">
-          <article class="aspect-card">
-            <span class="card-number">01</span>
-            <h3>Philosophy</h3>
-            <p>Questions, arguments, frameworks, and the long habit of trying to think clearly.</p>
+
+        <div class="inquiry-layout">
+          <div class="inquiry-tabs" role="tablist" aria-label="Current inquiry areas">
+            <button class="inquiry-tab is-active" type="button" role="tab" aria-selected="true" data-panel="philosophy">
+              Philosophy
+            </button>
+            <button class="inquiry-tab" type="button" role="tab" aria-selected="false" data-panel="writing">
+              Writing
+            </button>
+            <button class="inquiry-tab" type="button" role="tab" aria-selected="false" data-panel="building">
+              Building
+            </button>
+          </div>
+
+          <article class="inquiry-card is-active" id="panel-philosophy" data-inquiry-panel="philosophy">
+            <p class="card-label">Primary lens</p>
+            <h3>Conceptual clarity under pressure</h3>
+            <p>
+              Arguments, standards of evidence, fallacy analysis, and the patient craft of making
+              distinctions that survive contact with real disagreement.
+            </p>
           </article>
-          <article class="aspect-card">
-            <span class="card-number">02</span>
-            <h3>Writing</h3>
-            <p>Essays, notes, drafts, and published pieces gathered into one durable index.</p>
+
+          <article class="inquiry-card" id="panel-writing" data-inquiry-panel="writing" hidden>
+            <p class="card-label">Public notes</p>
+            <h3>Essays as thinking instruments</h3>
+            <p>
+              Drafts and finished pieces that turn loose intuitions into durable claims, examples,
+              objections, and revisions.
+            </p>
           </article>
-          <article class="aspect-card">
-            <span class="card-number">03</span>
-            <h3>Projects</h3>
-            <p>Small tools, experiments, repositories, and other artifacts from ongoing work.</p>
-          </article>
-          <article class="aspect-card">
-            <span class="card-number">04</span>
-            <h3>Teaching</h3>
-            <p>Materials, explanations, prompts, and resources for people learning alongside me.</p>
-          </article>
-          <article class="aspect-card">
-            <span class="card-number">05</span>
-            <h3>Personal</h3>
-            <p>Places, relationships, routines, and the human texture around the public work.</p>
-          </article>
-          <article class="aspect-card">
-            <span class="card-number">06</span>
-            <h3>Archive</h3>
-            <p>A place for older pages and fragments that still deserve to be findable.</p>
+
+          <article class="inquiry-card" id="panel-building" data-inquiry-panel="building" hidden>
+            <p class="card-label">Digital workbench</p>
+            <h3>Tools that make thought visible</h3>
+            <p>
+              Small software projects, structured archives, and practical workflows for exploring
+              ideas without losing their texture.
+            </p>
           </article>
         </div>
       </section>
 
       <section class="section writing-section" id="writing" aria-labelledby="writing-title">
-        <div class="section-heading">
-          <p class="section-label">Writing</p>
-          <h2 id="writing-title">Notes waiting to become paths.</h2>
-          <p>
-            Start with a few broad shelves, then let each shelf grow into its own
-            page when the material is ready.
-          </p>
+        <div class="section-heading compact">
+          <span class="section-index">02</span>
+          <h2 id="writing-title">Writing shelves.</h2>
         </div>
 
         <div class="shelf-list" aria-label="Writing shelves">
           <article class="shelf-row">
             <span>Philosophy Notes</span>
             <strong>Arguments, questions, and maps of ideas</strong>
+            <p>Short-form notes and durable conceptual outlines.</p>
           </article>
           <article class="shelf-row">
             <span>Essays</span>
             <strong>Finished pieces and public drafts</strong>
+            <p>Longer work with a clearer thesis and a reason to return.</p>
           </article>
           <article class="shelf-row">
             <span>Teaching Materials</span>
             <strong>Lessons, handouts, and exercises</strong>
+            <p>Resources shaped for explanation, not just storage.</p>
           </article>
         </div>
       </section>
 
       <section class="section projects-section" id="projects" aria-labelledby="projects-title">
         <div class="section-heading">
-          <p class="section-label">Projects</p>
-          <h2 id="projects-title">A workbench for things in motion.</h2>
+          <span class="section-index">03</span>
+          <h2 id="projects-title">A modern archive with room to grow.</h2>
+          <p>
+            This first approval draft creates the architecture: a high-signal home page now, with
+            space for deeper pages as the real material arrives.
+          </p>
         </div>
 
-        <div class="project-board">
-          <article class="project-feature">
-            <p class="project-kicker">Current frame</p>
-            <h3>GitHub Pages as a living index</h3>
+        <div class="project-grid">
+          <article class="project-card featured">
+            <div class="project-signal" aria-hidden="true">
+              <span>Question</span>
+              <span>Argument</span>
+              <span>Revision</span>
+            </div>
+            <p class="card-label">Foundation</p>
+            <h3>Personal knowledge home</h3>
             <p>
-              This first version creates the structure. The next versions can
-              add real project pages, academic links, photos, talks, CV entries,
-              and a clearer taxonomy as the archive grows.
+              A refined front door for philosophy, publications, teaching, experiments, and links.
             </p>
           </article>
-          <div class="project-list">
-            <article>
-              <h3>Repositories</h3>
-              <p>Selected code and tools worth explaining to visitors.</p>
-            </article>
-            <article>
-              <h3>Research</h3>
-              <p>Public work, citations, papers, and durable reference pages.</p>
-            </article>
-            <article>
-              <h3>Experiments</h3>
-              <p>Small investigations and prototypes that may become larger things.</p>
-            </article>
-          </div>
+          <article class="project-card">
+            <p class="card-label">Next layer</p>
+            <h3>Research index</h3>
+            <p>Papers, bibliographies, public notes, and citation-friendly pages.</p>
+          </article>
+          <article class="project-card">
+            <p class="card-label">Next layer</p>
+            <h3>Project library</h3>
+            <p>Selected repositories and tools with enough context to be useful.</p>
+          </article>
+          <article class="project-card">
+            <p class="card-label">Next layer</p>
+            <h3>Teaching studio</h3>
+            <p>Reusable explanations, prompts, exercises, and classroom-facing material.</p>
+          </article>
         </div>
       </section>
 
-      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <section class="section connect-section" id="connect" aria-labelledby="connect-title">
         <div>
-          <p class="section-label">Contact</p>
-          <h2 id="contact-title">A quiet front door.</h2>
+          <span class="section-index">04</span>
+          <h2 id="connect-title">A quiet front door.</h2>
         </div>
         <p>
-          Add preferred contact links here when you are ready. For now, this page
-          is structured so the public site can launch without publishing private
-          details by accident.
+          Contact links, academic profiles, social links, and selected repositories can live here
+          once you decide what should be public.
         </p>
       </section>
     </main>

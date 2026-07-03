@@ -2,9 +2,8 @@
 
 This repository hosts Phil Stilwell's GitHub Pages site.
 
-The first version is intentionally simple: a static, no-build website served from
-the repository root. It is meant to become a living home for the public parts of
-Phil's life: writing, philosophy, projects, teaching, and personal archives.
+The site is a static, no-build personal home for the public parts of Phil's
+life: philosophy, writing, teaching, projects, and archives.
 
 ## Local Preview
 
@@ -15,4 +14,3 @@ python3 -m http.server 8080
 ```
 
 Then visit `http://localhost:8080`.
-
