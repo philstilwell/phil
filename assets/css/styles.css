@@ -436,8 +436,7 @@ h1 {
 }
 
 .bio-layout,
-.works-layout,
-.photo-layout {
+.works-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.96fr) minmax(320px, 1.04fr);
   gap: 28px;
@@ -769,23 +768,6 @@ h1 {
   line-height: 1.2;
 }
 
-.taxonomy {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1px;
-  border: 1px solid var(--line);
-  background: var(--line);
-}
-
-.taxonomy span {
-  min-height: 106px;
-  display: flex;
-  align-items: end;
-  background: var(--panel-strong);
-  padding: 16px;
-  font-weight: 820;
-}
-
 .button {
   display: inline-flex;
   min-height: 42px;
@@ -881,8 +863,7 @@ h1 {
   .bio-layout,
   .works-layout,
   .concept-layout,
-  .stance-layout,
-  .photo-layout {
+  .stance-layout {
     grid-template-columns: 1fr;
   }
 
@@ -945,8 +926,7 @@ h1 {
   .profiles-layout,
   .concept-thread,
   .stance-grid,
-  .stance-axis,
-  .taxonomy {
+  .stance-axis {
     grid-template-columns: 1fr;
   }
 
@@ -986,7 +966,6 @@ h1 {
   .site-link,
   .concept-cell,
   .paper-group,
-  .taxonomy span,
   .profiles-layout a {
     min-height: 78px;
   }
