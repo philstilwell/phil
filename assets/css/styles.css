@@ -418,6 +418,10 @@ h3 {
 .inquiry-section,
 .writing-section,
 .projects-section,
+.bio-section,
+.works-section,
+.sites-section,
+.photo-section,
 .connect-section {
   padding: clamp(82px, 10vw, 136px) 0;
   border-bottom: 1px solid var(--line);
@@ -439,6 +443,10 @@ h3 {
 .inquiry-card p,
 .project-card p,
 .connect-section p,
+.bio-card p,
+.profile-card,
+.vector-grid p,
+.works-panel p,
 .shelf-row p {
   color: var(--muted);
 }
@@ -519,6 +527,281 @@ h3 {
   max-width: 720px;
   margin-bottom: 0;
   font-size: 1.06rem;
+}
+
+.bio-grid,
+.works-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.82fr);
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.bio-card,
+.profile-card,
+.works-panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(244, 239, 226, 0.1), rgba(244, 239, 226, 0.035)),
+    rgba(244, 239, 226, 0.035);
+  padding: clamp(24px, 4vw, 44px);
+}
+
+.bio-card.major {
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: var(--shadow);
+}
+
+.bio-card.major h3 {
+  max-width: 820px;
+  font-size: clamp(2rem, 4.2vw, 4.2rem);
+}
+
+.bio-card.major p:last-child {
+  max-width: 820px;
+  margin-bottom: 0;
+}
+
+.profile-card ul {
+  margin: 22px 0 0;
+  padding-left: 18px;
+}
+
+.profile-card li + li {
+  margin-top: 14px;
+}
+
+.vector-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.vector-grid article {
+  min-height: 240px;
+  background: rgba(244, 239, 226, 0.045);
+  padding: 24px;
+}
+
+.vector-grid span,
+.site-card span {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.vector-grid h3 {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.works-grid {
+  align-items: start;
+}
+
+.works-panel {
+  min-height: 100%;
+}
+
+.panel-heading {
+  margin-bottom: 22px;
+}
+
+.work-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: works;
+}
+
+.work-list li {
+  counter-increment: works;
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) 52px;
+  gap: 12px;
+  align-items: baseline;
+  border-top: 1px solid var(--line);
+  padding: 16px 0;
+}
+
+.work-list li::before {
+  content: counter(works, decimal-leading-zero);
+  color: var(--gold);
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+
+.work-list a,
+.academia-list a,
+.connect-links a,
+.text-link {
+  text-decoration: none;
+}
+
+.work-list a,
+.academia-list a {
+  font-weight: 850;
+}
+
+.work-list a:hover,
+.academia-list a:hover,
+.connect-links a:hover,
+.text-link:hover {
+  color: var(--gold);
+}
+
+.work-list span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 850;
+  text-align: right;
+}
+
+.academia-list {
+  display: grid;
+  gap: 12px;
+}
+
+.academia-list a {
+  border-top: 1px solid var(--line);
+  padding: 16px 0 4px;
+  font-family:
+    "Iowan Old Style",
+    "Palatino Linotype",
+    Palatino,
+    Georgia,
+    serif;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.08;
+}
+
+.source-note {
+  margin: 24px 0 14px;
+  font-size: 0.92rem;
+}
+
+.text-link {
+  display: inline-flex;
+  margin-top: 8px;
+  color: var(--gold);
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
+.site-group + .site-group {
+  margin-top: 42px;
+}
+
+.site-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.site-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.site-card {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(160deg, rgba(212, 170, 55, 0.12), transparent 46%),
+    rgba(244, 239, 226, 0.045);
+  padding: 24px;
+  text-decoration: none;
+}
+
+.site-card strong {
+  font-family:
+    "Iowan Old Style",
+    "Palatino Linotype",
+    Palatino,
+    Georgia,
+    serif;
+  font-size: clamp(1.28rem, 2.1vw, 1.85rem);
+  line-height: 1.08;
+}
+
+.fun-sites .site-card {
+  min-height: 220px;
+  background:
+    linear-gradient(160deg, rgba(127, 138, 84, 0.16), transparent 46%),
+    rgba(244, 239, 226, 0.045);
+}
+
+.photo-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.94fr) minmax(320px, 1.06fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(212, 170, 55, 0.18), transparent 42%),
+    linear-gradient(315deg, rgba(127, 138, 84, 0.16), transparent 48%),
+    rgba(244, 239, 226, 0.045);
+  padding: clamp(24px, 5vw, 58px);
+  box-shadow: var(--shadow);
+}
+
+.photo-panel p {
+  color: var(--muted);
+  font-size: clamp(1.06rem, 1.8vw, 1.24rem);
+}
+
+.photo-taxonomy {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.photo-taxonomy span {
+  min-height: 118px;
+  display: grid;
+  place-items: end start;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(145deg, rgba(244, 239, 226, 0.14), transparent 50%),
+    rgba(9, 8, 6, 0.22);
+  padding: 16px;
+  color: var(--ink);
+  font-family:
+    "Iowan Old Style",
+    "Palatino Linotype",
+    Palatino,
+    Georgia,
+    serif;
+  font-size: clamp(1.08rem, 2vw, 1.6rem);
+  font-weight: 850;
+}
+
+.connect-links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.connect-links a {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(244, 239, 226, 0.045);
+  padding: 18px;
+  font-weight: 850;
 }
 
 .shelf-list {
@@ -666,6 +949,9 @@ h3 {
 
   .hero,
   .inquiry-layout,
+  .bio-grid,
+  .works-grid,
+  .photo-panel,
   .connect-section {
     grid-template-columns: 1fr;
   }
@@ -681,6 +967,13 @@ h3 {
 
   .project-grid {
     grid-template-columns: 1fr;
+  }
+
+  .vector-grid,
+  .site-grid,
+  .site-grid.two,
+  .connect-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .project-card.featured {
@@ -714,8 +1007,24 @@ h3 {
   }
 
   .inquiry-tabs,
+  .vector-grid,
+  .site-grid,
+  .site-grid.two,
+  .photo-taxonomy,
+  .connect-links,
   .shelf-row {
     grid-template-columns: 1fr;
+  }
+
+  .work-list li {
+    grid-template-columns: 26px minmax(0, 1fr) 42px;
+  }
+
+  .bio-card.major,
+  .works-panel,
+  .site-card,
+  .photo-taxonomy span {
+    min-height: auto;
   }
 
   .shelf-row {
