@@ -4,8 +4,6 @@ const navItems = Array.from(document.querySelectorAll(".nav-links a"));
 const yearSlot = document.querySelector("[data-year]");
 const progress = document.querySelector("[data-scroll-progress]");
 const themeToggle = document.querySelector("[data-theme-toggle]");
-const inquiryTabs = Array.from(document.querySelectorAll("[data-panel]"));
-const inquiryPanels = Array.from(document.querySelectorAll("[data-inquiry-panel]"));
 const root = document.documentElement;
 
 const savedTheme = localStorage.getItem("phil-theme");
@@ -32,6 +30,21 @@ if (navToggle && navLinks) {
   });
 }
 
+const openHashPanel = (hash) => {
+  if (!hash || hash === "#top") return;
+
+  const target = document.querySelector(hash);
+  if (target instanceof HTMLDetailsElement) {
+    target.open = true;
+  }
+};
+
+navItems.forEach((link) => {
+  link.addEventListener("click", () => {
+    openHashPanel(link.hash);
+  });
+});
+
 if (themeToggle) {
   themeToggle.addEventListener("click", () => {
     const nextTheme = root.dataset.theme === "light" ? "dark" : "light";
@@ -39,24 +52,6 @@ if (themeToggle) {
     localStorage.setItem("phil-theme", nextTheme);
   });
 }
-
-inquiryTabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    const target = tab.dataset.panel;
-
-    inquiryTabs.forEach((item) => {
-      const isActive = item === tab;
-      item.classList.toggle("is-active", isActive);
-      item.setAttribute("aria-selected", String(isActive));
-    });
-
-    inquiryPanels.forEach((panel) => {
-      const isActive = panel.dataset.inquiryPanel === target;
-      panel.classList.toggle("is-active", isActive);
-      panel.hidden = !isActive;
-    });
-  });
-});
 
 const updateProgress = () => {
   if (!progress) return;
@@ -67,7 +62,7 @@ const updateProgress = () => {
 };
 
 const observeSections = () => {
-  const sections = Array.from(document.querySelectorAll("section[id]"));
+  const sections = Array.from(document.querySelectorAll("section[id], details[id]"));
   if (!("IntersectionObserver" in window)) return;
 
   const observer = new IntersectionObserver(
@@ -88,5 +83,7 @@ const observeSections = () => {
 
 window.addEventListener("scroll", updateProgress, { passive: true });
 window.addEventListener("resize", updateProgress);
+window.addEventListener("hashchange", () => openHashPanel(window.location.hash));
+openHashPanel(window.location.hash);
 updateProgress();
 observeSections();
