@@ -291,7 +291,9 @@ h3 {
 .subhead p,
 .fact-list span,
 .index-grid span,
-.site-link span {
+.site-link span,
+.stance-card span,
+.stance-axis span {
   margin-bottom: 10px;
   color: var(--accent);
   font-family:
@@ -471,7 +473,9 @@ h1 {
 
 .fact-list span,
 .subhead p,
-.site-link span {
+.site-link span,
+.stance-card span,
+.stance-axis span {
   color: var(--cyan);
 }
 
@@ -566,6 +570,66 @@ h1 {
   font-weight: 780;
 }
 
+.source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin-top: 8px;
+}
+
+.stance-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(360px, 1.22fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.stance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.stance-card {
+  min-height: 164px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:
+    linear-gradient(135deg, rgba(201, 255, 63, 0.07), transparent 46%),
+    var(--panel-strong);
+  padding: 17px;
+}
+
+.stance-card h3 {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+  line-height: 1.12;
+}
+
+.stance-card p,
+.stance-axis p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.stance-axis {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.stance-axis div {
+  min-height: 96px;
+  background: var(--panel-strong);
+  padding: 17px;
+}
+
 .site-group + .site-group {
   margin-top: 34px;
 }
@@ -635,7 +699,7 @@ h1 {
 
 .profiles-layout {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1px;
   border: 1px solid var(--line);
   background: var(--line);
@@ -709,6 +773,7 @@ h1 {
   .hero,
   .bio-layout,
   .works-layout,
+  .stance-layout,
   .photo-layout {
     grid-template-columns: 1fr;
   }
@@ -760,6 +825,8 @@ h1 {
   .site-grid,
   .site-grid.two,
   .profiles-layout,
+  .stance-grid,
+  .stance-axis,
   .taxonomy {
     grid-template-columns: 1fr;
   }
