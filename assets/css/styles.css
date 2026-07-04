@@ -154,7 +154,8 @@ h3 {
 .site-link,
 .profiles-layout a,
 .work-list a,
-.academia-list a {
+.academia-list a,
+.paper-group a {
   text-decoration: none;
 }
 
@@ -293,7 +294,9 @@ h3 {
 .index-grid span,
 .site-link span,
 .stance-card span,
-.stance-axis span {
+.stance-axis span,
+.concept-cell span,
+.concept-thread span {
   margin-bottom: 10px;
   color: var(--accent);
   font-family:
@@ -475,7 +478,9 @@ h1 {
 .subhead p,
 .site-link span,
 .stance-card span,
-.stance-axis span {
+.stance-axis span,
+.concept-cell span,
+.concept-thread span {
   color: var(--cyan);
 }
 
@@ -575,6 +580,109 @@ h1 {
   flex-wrap: wrap;
   gap: 4px 18px;
   margin-top: 8px;
+}
+
+.concept-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(360px, 1.22fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.concept-intro {
+  position: sticky;
+  top: 86px;
+}
+
+.concept-map {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.concept-cell {
+  min-height: 262px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:
+    linear-gradient(135deg, rgba(119, 215, 255, 0.08), transparent 46%),
+    var(--panel-strong);
+  padding: 18px;
+}
+
+.concept-cell h3,
+.concept-thread h3,
+.paper-group h3 {
+  margin-bottom: 10px;
+  font-size: 1.08rem;
+  line-height: 1.14;
+}
+
+.concept-cell p,
+.concept-thread p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.concept-thread,
+.paper-cluster {
+  grid-column: 1 / -1;
+}
+
+.concept-thread {
+  display: grid;
+  grid-template-columns: minmax(210px, 0.38fr) minmax(0, 1fr);
+  gap: 28px;
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+}
+
+.concept-thread + .concept-thread {
+  margin-top: -6px;
+}
+
+.paper-cluster {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+}
+
+.paper-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.paper-group {
+  min-height: 262px;
+  display: flex;
+  flex-direction: column;
+  background:
+    linear-gradient(135deg, rgba(201, 255, 63, 0.055), transparent 42%),
+    var(--panel-strong);
+  padding: 18px;
+}
+
+.paper-group h3 {
+  color: var(--ink);
+}
+
+.paper-group a {
+  border-top: 1px solid var(--line);
+  padding: 11px 0;
+  color: var(--muted);
+  font-weight: 760;
+  line-height: 1.25;
+}
+
+.paper-group a:hover,
+.paper-group a:focus-visible {
+  color: var(--accent);
+  outline: none;
 }
 
 .stance-layout {
@@ -773,13 +881,28 @@ h1 {
   .hero,
   .bio-layout,
   .works-layout,
+  .concept-layout,
   .stance-layout,
   .photo-layout {
     grid-template-columns: 1fr;
   }
 
+  .concept-intro {
+    position: static;
+  }
+
   .hero {
     padding-top: 34px;
+  }
+
+  .concept-map,
+  .paper-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .concept-cell,
+  .paper-group {
+    min-height: auto;
   }
 
   .site-grid,
@@ -825,6 +948,7 @@ h1 {
   .site-grid,
   .site-grid.two,
   .profiles-layout,
+  .concept-thread,
   .stance-grid,
   .stance-axis,
   .taxonomy {
@@ -865,6 +989,8 @@ h1 {
   }
 
   .site-link,
+  .concept-cell,
+  .paper-group,
   .taxonomy span,
   .profiles-layout a {
     min-height: 78px;
