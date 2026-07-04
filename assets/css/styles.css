@@ -590,8 +590,7 @@ h1 {
 }
 
 .concept-intro {
-  position: sticky;
-  top: 86px;
+  align-self: start;
 }
 
 .concept-map {
@@ -885,10 +884,6 @@ h1 {
   .stance-layout,
   .photo-layout {
     grid-template-columns: 1fr;
-  }
-
-  .concept-intro {
-    position: static;
   }
 
   .hero {
