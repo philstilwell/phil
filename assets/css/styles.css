@@ -151,6 +151,7 @@ h3 {
 .button,
 .site-footer a,
 .text-link,
+.inline-link,
 .site-link,
 .profiles-layout a,
 .work-list a,
@@ -535,6 +536,8 @@ h1 {
 .profiles-layout a:focus-visible,
 .text-link:hover,
 .text-link:focus-visible,
+.inline-link:hover,
+.inline-link:focus-visible,
 .site-link:hover strong,
 .site-link:focus-visible strong {
   color: var(--accent);
@@ -570,6 +573,11 @@ h1 {
 .text-link {
   display: inline-flex;
   margin-top: 8px;
+  color: var(--cyan);
+  font-weight: 780;
+}
+
+.inline-link {
   color: var(--cyan);
   font-weight: 780;
 }
