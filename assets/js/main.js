@@ -1,6 +1,9 @@
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navLinks = document.querySelector("[data-nav-links]");
 const navItems = Array.from(document.querySelectorAll(".nav-links a"));
+const sectionNavItems = navItems.filter(
+  (link) => link.hash && link.pathname === window.location.pathname,
+);
 const yearSlot = document.querySelector("[data-year]");
 const progress = document.querySelector("[data-scroll-progress]");
 const themeToggle = document.querySelector("[data-theme-toggle]");
@@ -39,7 +42,7 @@ const openHashPanel = (hash) => {
   }
 };
 
-navItems.forEach((link) => {
+sectionNavItems.forEach((link) => {
   link.addEventListener("click", () => {
     openHashPanel(link.hash);
   });
@@ -70,7 +73,7 @@ const observeSections = () => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
 
-        navItems.forEach((link) => {
+        sectionNavItems.forEach((link) => {
           link.classList.toggle("is-active", link.getAttribute("href") === `#${entry.target.id}`);
         });
       });
