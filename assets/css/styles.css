@@ -653,6 +653,45 @@ h1 {
   outline: none;
 }
 
+.philpeople-embed {
+  display: grid;
+  gap: 12px;
+}
+
+.ppl-widget-container {
+  max-height: 620px;
+  min-height: 180px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, rgba(119, 215, 255, 0.06), transparent 42%),
+    var(--panel-strong);
+  padding: 18px;
+  color: var(--muted);
+}
+
+.ppl-widget-container a {
+  color: var(--cyan);
+  font-weight: 760;
+  text-decoration: none;
+}
+
+.ppl-widget-container a:hover,
+.ppl-widget-container a:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+
+.ppl-widget-container ul,
+.ppl-widget-container ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.ppl-widget-container li + li {
+  margin-top: 10px;
+}
+
 .inline-link {
   color: var(--cyan);
   font-weight: 780;
