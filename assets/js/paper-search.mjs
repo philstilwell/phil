@@ -99,7 +99,7 @@ async function loadIndex() {
   const controller = new AbortController();
   const timeout = window.setTimeout(() => controller.abort(), 12000);
   try {
-    const response = await fetch('/assets/data/papers.json', { signal: controller.signal });
+    const response = await fetch('/assets/data/papers.json', { signal: controller.signal, cache: 'no-cache' });
     if (!response.ok) throw new Error('Index unavailable');
     const data = await response.json();
     if (data.schemaVersion !== 1 || !Array.isArray(data.papers) || !data.papers.length) throw new Error('Invalid index');

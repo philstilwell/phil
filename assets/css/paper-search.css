@@ -18,7 +18,7 @@
 .paper-search-note { margin-bottom: 0; color: var(--muted); font-size: .85rem; }
 .paper-results { list-style: none; padding: 0; margin: 24px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .paper-results:empty { display: none; }
-.paper-result { min-width: 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel-strong); padding: 22px; }
+.paper-result { --ink: #f0f6ff; --muted: #c0cfdf; --line: #365473; --cyan: #87d8ff; --accent: #c9ff3f; min-width: 0; border: 1px solid var(--line); border-radius: var(--radius); background: #102743; color: var(--ink); padding: 22px; }
 .paper-result article { display: flex; flex-direction: column; height: 100%; }
 .paper-result-category { color: var(--cyan); font-size: .8rem; margin-bottom: 10px; }
 .paper-result h3 { margin-bottom: 12px; font-size: 1.16rem; line-height: 1.4; overflow-wrap: anywhere; }

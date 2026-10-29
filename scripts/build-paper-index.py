@@ -7,6 +7,7 @@ import argparse
 import json
 import re
 import sys
+import tempfile
 from datetime import date
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -24,13 +25,17 @@ def build_index(payload, as_of):
     headers = values[0]
     if any(name not in headers for name in REQUIRED):
         raise ValueError('The source is missing required Papers column headers.')
-    papers, seen = [], set()
+    papers, seen, seen_ids = [], set(), set()
     for values_row in values[1:]:
         row = dict(zip(headers, values_row))
         value = lambda key: str(row.get(key, '')).strip()
         if (value('Record Type') != 'Paper' or value('Current/Archived') != 'Current'
                 or not value('Current State').startswith('Published')):
             continue
+        paper_id = value('Paper ID')
+        if not paper_id or paper_id in seen_ids:
+            raise ValueError('Published papers must have nonempty, unique Paper IDs.')
+        seen_ids.add(paper_id)
         title = re.sub(r'^[◉✶★\s]+', '', value('Canonical Title'))
         url = value('Academia URL')
         parsed = urlsplit(url)
@@ -56,6 +61,28 @@ def build_index(payload, as_of):
     return {'schemaVersion': 1, 'updatedAt': as_of, 'papers': papers}
 
 
+def write_index(index, output):
+    """Preserve the date and file when public contents have not changed."""
+    output = Path(output)
+    if output.exists():
+        previous = json.loads(output.read_text(encoding='utf-8'))
+        if (previous.get('schemaVersion') == index['schemaVersion']
+                and previous.get('papers') == index['papers']):
+            return False
+    output.parent.mkdir(parents=True, exist_ok=True)
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', dir=output.parent,
+                                         prefix='.paper-index-', suffix='.tmp', delete=False) as stream:
+            temporary = Path(stream.name)
+            stream.write(json.dumps(index, ensure_ascii=False, indent=2) + '\n')
+        temporary.replace(output)
+    finally:
+        if temporary is not None:
+            temporary.unlink(missing_ok=True)
+    return True
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--as-of', required=True, help='Refresh date, YYYY-MM-DD')
@@ -63,7 +90,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
     date.fromisoformat(args.as_of)
     index = build_index(json.load(sys.stdin), args.as_of)
-    output = Path(args.output)
-    output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps(index, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    print(f'Indexed {len(index["papers"])} current published papers in {output}.')
+    changed = write_index(index, args.output)
+    print(f'{"Updated" if changed else "Unchanged"}: {len(index["papers"])} current published papers in {args.output}.')

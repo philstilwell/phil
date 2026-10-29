@@ -27,7 +27,15 @@ The source is the private **Insights** Google spreadsheet, ID
 (`gid=104694488`), not the File Inventory tab or the category views. The views
 repeat the master records. Do not change the spreadsheet's sharing permissions.
 
-The index is a dated snapshot, not a live connection. To refresh it:
+The index is a dated public snapshot of selected fields from the private source.
+Codex checks for changes **every other day at 9:20 a.m. America/New_York** through
+the existing private Google Drive connection. The automation needs Codex available
+on the user's Mac and uses the normal Codex allowance. It publishes only when public
+contents change, so private-note edits do not change the website or refresh date.
+The procedure and recovery steps are in
+[`scripts/PAPER_INDEX_SYNC.md`](scripts/PAPER_INDEX_SYNC.md).
+
+To refresh it manually:
 
 1. Use the connected Google Drive tools to read spreadsheet metadata and confirm
    the current Papers column headings and grid bounds.
@@ -56,12 +64,13 @@ remain available. The source currently has Academia links for every included pap
 PhilPeople profile links remain elsewhere on the page.
 
 No credentials or private Sheets export endpoints belong in the browser code.
-Automatic refresh would require a separately authorized private read-and-publish
-process; this change does not schedule one or make the source spreadsheet public.
+The scheduled refresh does not change spreadsheet sharing. Its checkpoint stays
+in Git's local metadata directory and is never published. A failed source read or
+validation leaves the last valid public index in place.
 
 ### Search checks
 
 ```sh
 node --test tests/paper-search.test.mjs
-PYTHONDONTWRITEBYTECODE=1 python3 tests/test_build_paper_index.py
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_*.py'
 ```
