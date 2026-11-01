@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-29",
+  "updatedAt": "2026-11-01",
   "papers": [
     {
       "id": "CTS-P0182",
@@ -154,6 +154,27 @@
       }
     },
     {
+      "id": "CTS-P0315",
+      "title": "Affective Governance: AI, Moral Non-Realism, and the Affective-Value Balancing Model",
+      "category": "Metaethics / AI-assisted Deliberation",
+      "keywords": [
+        "artificial intelligence",
+        "moral realism",
+        "moral non-realism",
+        "metaethics",
+        "value psychology",
+        "value pluralism",
+        "AI alignment",
+        "social coordination",
+        "affective governance",
+        "moral reification"
+      ],
+      "summary": "Develops a conditional, testable account of how AI-assisted coordination may weaken dependence on moral realism, alongside an accountable model for balancing affective values.",
+      "links": {
+        "academia": "https://www.academia.edu/179887662/_Affective_Governance_AI_Moral_Non_Realism_and_the_Affective_Value_Balancing_Model"
+      }
+    },
+    {
       "id": "CTS-P0001",
       "title": "Against Epistemic Exceptionalism in Plantinga's Warrant Theory - Credence, Proper Function, and the Public Calibration of Theistic Belief",
       "category": "Philosophy of Religion / Reformed Epistemology",
@@ -180,16 +201,16 @@
         "Elizabeth Jackson",
         "belief-credence dualism",
         "faith",
-        "pistis",
+        "epistemic rationality",
         "epistemic permissivism",
         "evidentialism",
         "calibration",
         "B-evidence",
         "C-evidence"
       ],
-      "summary": "Challenges Jackson's justification for retaining categorical belief as confidence falls, using her testimony case, explicit probability models, and a sustained religious example to distinguish responsible persistence from unsupported evidential exemption.",
+      "summary": "Defends evidence-proportioned confidence as the governing standard of rational belief, rejects independent epistemic entitlement for categorical belief, and argues that conscious detachment from evidence is intrinsically epistemically irrational.",
       "links": {
-        "academia": "https://www.academia.edu/175279658/Against_the_Epistemic_Nobility_of_Flat_Out_Belief_Elizabeth_Jackson_Credence_Faith_and_the_Abandonment_of_Calibration"
+        "academia": "https://www.academia.edu/179911393/Against_the_Epistemic_Nobility_of_Flat_Out_Belief_Elizabeth_Jackson_Credence_Faith_and_the_Abandonment_of_Calibration"
       }
     },
     {
@@ -637,6 +658,25 @@
       "summary": "Epistemology routinely evaluates belief, credence, and norms of revision, yet the term \"rationality\" often functions as a catch-all that conflates two importantly different phenomena: (i) an evidence-responsive orientation toward inquiry and (ii) mastery of sophisticated formal tools for representing uncertainty and argument...",
       "links": {
         "academia": "https://www.academia.edu/145488011/_Core_Rationality"
+      }
+    },
+    {
+      "id": "CTS-P0316",
+      "title": "Credence First: Against Plantinga's Warrant as an Epistemic Upgrade",
+      "category": "Epistemology / Philosophy of Religion",
+      "keywords": [
+        "credence",
+        "warrant",
+        "Alvin Plantinga",
+        "evidential proportionality",
+        "epistemic rationality",
+        "proper function",
+        "religious experience",
+        "knowledge"
+      ],
+      "summary": "Argues that warrant cannot rationalize confidence beyond total relevant evidence, distinguishing reliable belief production from justified confidence and rejecting self-certification as an epistemic upgrade.",
+      "links": {
+        "academia": "https://www.academia.edu/179931767/_Credence_First_Against_Plantingas_Warrant_as_an_Epistemic_Upgrade"
       }
     },
     {
