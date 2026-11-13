@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-01",
+  "updatedAt": "2026-11-13",
   "papers": [
     {
       "id": "CTS-P0182",
@@ -641,6 +641,28 @@
       "summary": "Argues that one context-sensitive evidential rule should govern ancient and modern public miracle reports, and that Matthew 27:52–53 remains historically unestablished without being disproved.",
       "links": {
         "academia": "https://www.academia.edu/171752173/Consistent_Standards_of_Evidence_for_Miracle_Claims_23"
+      }
+    },
+    {
+      "id": "CTS-P0319",
+      "title": "Conviction, Doubt, and Disagreement in the 2023 Christian Thought Survey",
+      "category": "Religious Epistemology / Christian Theology / Survey Research",
+      "keywords": [
+        "Christian Thought Survey",
+        "credence",
+        "dogmatism",
+        "religious disagreement",
+        "belief revision",
+        "faith and evidence",
+        "intellectual humility",
+        "Christian ministry",
+        "denominational differences",
+        "religious experience",
+        "survey research"
+      ],
+      "summary": "Analyzes 81,200 credence ratings from 406 Christian ministers, distinguishing doctrinal disagreement, selective certainty, evidence-responsive belief revision and exploratory measures of dogmatism while preserving all 200 item distributions.",
+      "links": {
+        "academia": "https://www.academia.edu/180783210/_Conviction_Doubt_and_Disagreement_in_the_2023_Christian_Thought_Survey"
       }
     },
     {
