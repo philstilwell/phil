@@ -1,7 +1,29 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-13",
+  "updatedAt": "2026-11-17",
   "papers": [
+    {
+      "id": "CTS-P0320",
+      "title": "A Comfortable Discontent: Democratic Commitment Under Repeated Disappointment",
+      "category": "Political Philosophy / Democratic Theory / Political Obligation",
+      "keywords": [
+        "democratic legitimacy",
+        "democratic commitment",
+        "losers’ consent",
+        "political equality",
+        "tribalistic morality",
+        "civil disobedience",
+        "political violence",
+        "moral non-realism",
+        "political obligation",
+        "reciprocity",
+        "justified resistance"
+      ],
+      "summary": "Defends continued democratic commitment through repeated defeat, rejects standing doctrinal exemptions from defensible common obligations, and distinguishes tribal defiance from justified resistance.",
+      "links": {
+        "academia": "https://www.academia.edu/181159393/A_Comfortable_Discontent_Democratic_Commitment_Under_Repeated_Disappointment"
+      }
+    },
     {
       "id": "CTS-P0182",
       "title": "A Divine Author, Needless Suffering, and the Expectation Gap - 04",
@@ -4552,6 +4574,28 @@
       "summary": "",
       "links": {
         "academia": "https://www.academia.edu/168309143/Warranted_Uncertainty_The_Discipline_of_Not_Knowing_in_a_Credence_First_Epistemology"
+      }
+    },
+    {
+      "id": "CTS-P0321",
+      "title": "Wealth Incentives and Technological Progress",
+      "category": "Political Economy / Philosophy of Economics / Innovation",
+      "keywords": [
+        "wealth incentives",
+        "taxation",
+        "innovation",
+        "entrepreneurship",
+        "founders and heirs",
+        "employee contributions",
+        "research and development",
+        "causal inference",
+        "social benefits",
+        "economic growth",
+        "public policy"
+      ],
+      "summary": "Develops a morally neutral, testable model of wealth incentives using international historical cases and employees’ full contributions, distinguishing reported activity from benefits caused by tax policy.",
+      "links": {
+        "academia": "https://www.academia.edu/181159292/Wealth_Incentives_and_Technological_Progress"
       }
     },
     {
