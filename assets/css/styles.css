@@ -1,16 +1,15 @@
 :root {
   color-scheme: dark;
-  --bg: #0d0e0f;
+  --bg: #101b15;
   --bg-grid: rgba(238, 242, 232, 0.045);
-  --panel: #141619;
-  --panel-strong: #191c20;
+  --panel: #14221a;
+  --panel-strong: #192b20;
   --ink: #eef2e8;
   --muted: #a5aaa0;
   --subtle: #747b72;
   --line: rgba(238, 242, 232, 0.14);
   --line-strong: rgba(238, 242, 232, 0.26);
   --accent: #c9ff3f;
-  --cyan: #77d7ff;
   --red: #ff634f;
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
   --max: 1180px;
@@ -27,7 +26,6 @@
   --muted: #535951;
   --subtle: #71776f;
   --accent: #4f7000;
-  --cyan: #006b8f;
   --line: rgba(18, 20, 22, 0.15);
   --line-strong: rgba(18, 20, 22, 0.28);
   --shadow: 0 20px 62px rgba(18, 20, 22, 0.12);
@@ -122,7 +120,7 @@ h3 {
   z-index: 40;
   width: 0%;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--cyan), var(--red));
+  background: var(--accent);
 }
 
 .site-header {
@@ -130,7 +128,7 @@ h3 {
   top: 0;
   z-index: 20;
   border-bottom: 1px solid var(--line);
-  background: rgba(13, 14, 15, 0.82);
+  background: rgba(16, 27, 21, 0.82);
   backdrop-filter: blur(18px);
 }
 
@@ -409,7 +407,7 @@ h1 {
 }
 
 .dossier-panel summary:focus-visible {
-  outline: 2px solid var(--cyan);
+  outline: 2px solid var(--accent);
   outline-offset: -2px;
 }
 
@@ -505,7 +503,7 @@ h1 {
 .stance-axis span,
 .concept-cell span,
 .concept-thread span {
-  color: var(--cyan);
+  color: var(--accent);
 }
 
 .fact-list p {
@@ -678,27 +676,27 @@ h1 {
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
   padding: 7px 10px;
-  color: var(--cyan);
+  color: var(--accent);
   font-size: 0.78rem;
   font-weight: 780;
   text-decoration: none;
 }
 
 .book-formats a:hover {
-  border-color: var(--cyan);
+  border-color: var(--accent);
   color: var(--accent);
 }
 
 .book-cover:focus-visible,
 .book-formats a:focus-visible {
-  outline: 2px solid var(--cyan);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
 .text-link {
   display: inline-flex;
   margin-top: 8px;
-  color: var(--cyan);
+  color: var(--accent);
   font-weight: 780;
 }
 
@@ -725,14 +723,14 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   background:
-    linear-gradient(135deg, rgba(119, 215, 255, 0.08), transparent 46%),
+    linear-gradient(135deg, rgba(201, 255, 63, 0.08), transparent 46%),
     var(--panel-strong);
   padding: 17px;
   text-decoration: none;
 }
 
 .publication-preview span {
-  color: var(--cyan);
+  color: var(--accent);
   font-family:
     "SFMono-Regular",
     Consolas,
@@ -765,14 +763,14 @@ h1 {
   overflow: auto;
   border: 1px solid var(--line);
   background:
-    linear-gradient(135deg, rgba(119, 215, 255, 0.06), transparent 42%),
+    linear-gradient(135deg, rgba(201, 255, 63, 0.06), transparent 42%),
     var(--panel-strong);
   padding: 18px;
   color: var(--muted);
 }
 
 .ppl-widget-container a {
-  color: var(--cyan);
+  color: var(--accent);
   font-weight: 760;
   text-decoration: none;
 }
@@ -794,7 +792,7 @@ h1 {
 }
 
 .inline-link {
-  color: var(--cyan);
+  color: var(--accent);
   font-weight: 780;
 }
 
@@ -830,7 +828,7 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   background:
-    linear-gradient(135deg, rgba(119, 215, 255, 0.08), transparent 46%),
+    linear-gradient(135deg, rgba(201, 255, 63, 0.08), transparent 46%),
     var(--panel-strong);
   padding: 18px;
 }
@@ -982,7 +980,7 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   background:
-    linear-gradient(135deg, rgba(119, 215, 255, 0.09), transparent 46%),
+    linear-gradient(135deg, rgba(201, 255, 63, 0.09), transparent 46%),
     var(--panel-strong);
   padding: 18px;
 }
@@ -1021,13 +1019,13 @@ h1 {
 }
 
 .button.text-button {
-  color: var(--cyan);
+  color: var(--accent);
 }
 
 .button:hover,
 .button:focus-visible {
   filter: brightness(1.08);
-  outline: 2px solid var(--cyan);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -1097,7 +1095,7 @@ h1 {
 }
 
 .breadcrumbs a {
-  color: var(--cyan);
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -1190,7 +1188,7 @@ h1 {
 .publication-entry,
 .cv-card {
   background:
-    linear-gradient(135deg, rgba(119, 215, 255, 0.07), transparent 44%),
+    linear-gradient(135deg, rgba(201, 255, 63, 0.07), transparent 44%),
     var(--panel-strong);
   padding: 20px;
 }
@@ -1217,7 +1215,7 @@ h1 {
 }
 
 .publication-entry a {
-  color: var(--cyan);
+  color: var(--accent);
   font-weight: 800;
   text-decoration: none;
 }
@@ -1230,7 +1228,7 @@ h1 {
 
 .publication-meta {
   margin-bottom: 12px;
-  color: var(--cyan);
+  color: var(--accent);
   font-family:
     "SFMono-Regular",
     Consolas,
