@@ -1,3 +1,8 @@
+:root,
+:root[data-theme="light"] {
+  --cyan: var(--accent);
+}
+
 .consulting-hero {
   align-items: center;
 }
